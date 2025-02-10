@@ -5,419 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nawaf Al-Ageel | Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #e2c19d;
-            --secondary: #1a1a1a;
-            --text: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--secondary);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top calc(50%) right calc(40%); /* Moves it 10% left */
-    position: relative; /* Ensures overlay stays inside */
-}
-
-/* Optional: Transparent Overlay Effect */
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 10%; /* Moves it left */
-    width: 100%;
-    height: 100%;
-    background-image: url('cloud.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top right;
-    opacity: 0.3; /* Adjust transparency */
-    pointer-events: none; /* Prevents interference */
-    z-index: -1;
-}
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-}
-
-.avatar-container {
-    
-    position: relative;
-    width: 300px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.avatar-circle {
-    width: 300px;
-    height: 300px;
-    background-color: var(--primary);
-    border-radius: 50%;
-    position: absolute;
-    top: 100px;
-    animation: float 6s ease-in-out infinite;
-}
-
-.avatar-img {
-    position: absolute;
-    height: 400px;
-    width: auto;
-    left: -50%;
-    bottom: 0;
-    z-index: 2;
-    object-fit: cover;
-    object-position: top;
-    clip-path: ellipse(100% 85% at 50% 16%); /* Cuts bottom in a rounded shape */
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .avatar-container {
-        width: 250px;
-        height: 350px;
-    }
-
-    .avatar-circle {
-        width: 250px;
-        height: 250px;
-        top: 80px;
-    }
-
-    .avatar-img {
-        height: 350px;
-    }
-}
-
-        .avatar {
-            width: 300px;
-            height: 300px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #888;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: var(--primary);
-            color: var(--secondary);
-            text-decoration: none;
-            border-radius: 5px;
-            transition: transform 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-
-        .skills {
-            margin-top: 4rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .skill-card {
-            background-color: #2a2a2a;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .contact {
-            margin-top: 4rem;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            color: var(--text);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary);
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-image {
-                margin-top: 2rem;
-            }
-
-            .avatar {
-                width: 200px;
-                height: 200px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1.2rem;
-            }
-
-        }
-
-            [dir="rtl"] {
-            text-align: right;
-        }
-
-        [dir="rtl"] .nav-links {
-            flex-direction: row-reverse;
-        }
-
-        .lang-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--primary);
-            color: var(--secondary);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 1000;
-            transition: transform 0.3s;
-        }
-
-        [dir="rtl"] .lang-switch {
-            left: 20px;
-            right: auto;
-        }
-
-        .lang-switch:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Projects Section Styles */
-        .projects {
-            margin-top: 4rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background-color: #333;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-tech {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tech-tag {
-            background-color: var(--primary);
-            color: var(--secondary);
-            padding: 0.2rem 0.5rem;
-            border-radius: 3px;
-            font-size: 0.8rem;
-        }
-
-        /* Certificate Section Styles */
-        .certificates {
-            margin-top: 4rem;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .cert-card {
-            background-color: #2a2a2a;
-            padding: 1.5rem;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .cert-icon {
-            font-size: 2rem;
-            color: var(--primary);
-        }
-
-        /* Timeline Section */
-        .timeline {
-            margin-top: 4rem;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 100%;
-            background-color: var(--primary);
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            margin: 2rem 0;
-            position: relative;
-            width: 50%;
-            padding: 0 2rem;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-content {
-            background-color: #2a2a2a;
-            padding: 1.5rem;
-            border-radius: 10px;
-        }
-
-        .timeline-date {
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    
 <body>
     <button class="lang-switch" onclick="toggleLanguage()">
         <span class="en">عربي</span>
@@ -476,20 +69,64 @@
             <h2 class="lang-ar">المشاريع المميزة</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image" style="background-color: #2a2a2a;"></div>
+                    <div class="project-image" style="background-color: #2a2a2a;">
+                        <video autoplay loop muted playsinline class="project-video">
+                            <source src="Sahm_preview.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <div class="project-content">
-                        <h3 class="lang-en">Cloud Infrastructure Automation</h3>
+                        <h3 class="lang-en">Sahm</h3>
                         <h3 class="lang-ar">أتمتة البنية التحتية السحابية</h3>
-                        <p class="lang-en">Automated AWS infrastructure deployment using Terraform and Ansible</p>
+                        <p class="lang-en">Automated a highly available AWS infrastructure deployment</p>
                         <p class="lang-ar">نشر تلقائي للبنية التحتية على AWS باستخدام Terraform و Ansible</p>
                         <div class="project-tech">
                             <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">Terraform</span>
-                            <span class="tech-tag">Ansible</span>
+                            <span class="tech-tag">Cloudformation</span>
+                            <span class="tech-tag">MongoDB</span>
                         </div>
                     </div>
                 </div>
                 <!-- Add more project cards as needed -->
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #2a2a2a;">
+                        <video autoplay loop muted playsinline class="project-video">
+                            <source src="Foodstate_preview.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="lang-en">Foodstate</h3>
+                        <h3 class="lang-ar">أتمتة البنية التحتية السحابية</h3>
+                        <p class="lang-en">Built a Serverless Cost-efficient infrastructure on AWS</p>
+                        <p class="lang-ar">نشر تلقائي للبنية التحتية على AWS باستخدام Terraform و Ansible</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Serverless</span>
+                            <span class="tech-tag">AWS Rekognition</span>
+                            <span class="tech-tag">OpenAI API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #2a2a2a;">
+                        <video autoplay loop muted playsinline class="project-video">
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="lang-en">Misfah</h3>
+                        <h3 class="lang-ar">أتمتة البنية التحتية السحابية</h3>
+                        <p class="lang-en">AI-powered Social media filtering app for text and images</p>
+                        <p class="lang-ar">نشر تلقائي للبنية التحتية على AWS باستخدام Terraform و Ansible</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">CNN Model</span>
+                            <span class="tech-tag">BERT Model</span>
+                            <span class="tech-tag">Web Extension</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     
@@ -511,12 +148,13 @@
                     <h3>AWS SYSOPS with Tuwaiq</h3>
                     <br>
                     <!-- <h6>SY0-701</h6 style="padding-top: 0px;"> -->
-                    <p class="lang-en" style="color: #bbb;">CompTIA</p>
+                    <p class="lang-en" style="color: #bbb;">Tuwaiq Academy</p>
                     <p class="lang-ar" style="color: #bbb;">كومبتيا</p>
                 </div>
                 <div class="cert-card">
                     <i class="fas fa-shield-alt cert-icon"></i>
                     <h3>CompTIA Security+</h3>
+                    <br>
                     <br>
                     <!-- <h6>SY0-701</h6 style="padding-top: 0px;"> -->
                     <p class="lang-en" style="color: #bbb;">CompTIA</p>
@@ -528,7 +166,7 @@
                     <h3>TryHackMe CyberSecurity 101</h3>
                     <br>
                     <!-- <h6>SY0-701</h6 style="padding-top: 0px;"> -->
-                    <p class="lang-en" style="color: #bbb;">CompTIA</p>
+                    <p class="lang-en" style="color: #bbb;">TryHackMe</p>
                     <p class="lang-ar" style="color: #bbb;">كومبتيا</p>
                 </div>
             </div>
@@ -539,10 +177,11 @@
             <h2 class="lang-ar">الخبرات</h2>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-date">2023 - Present</div>
-                    <h3 class="lang-en">Senior Software Engineer</h3>
+                    <div class="timeline-date">Trainee</div>
+                    <h3 class="lang-en">In Process...</h3>
                     <h3 class="lang-ar">مهندس برمجيات أول</h3>
-                    <p class="lang-en">Leading cloud infrastructure projects and security initiatives</p>
+                    <br>
+                    <p class="lang-en"></p>
                     <p class="lang-ar">قيادة مشاريع البنية التحتية السحابية ومبادرات الأمن</p>
                 </div>
             </div>
@@ -565,72 +204,6 @@
         
     </div>
 
-    
-
-    <script>
-        // Add smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = 0;
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'all 0.6s ease-out';
-            observer.observe(section);
-        });
-
-         // Language switcher functionality
-         const translations = {
-            en: {
-                // Add your English translations here
-            },
-            ar: {
-                // Add your Arabic translations here
-            }
-        };
-
-        function toggleLanguage() {
-            const html = document.documentElement;
-            const currentLang = html.getAttribute('lang');
-            const newLang = currentLang === 'en' ? 'ar' : 'en';
-            
-            html.setAttribute('lang', newLang);
-            html.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
-
-            // Toggle visibility of language-specific elements
-            document.querySelectorAll('[class*="lang-"]').forEach(el => {
-                if (el.classList.contains(`lang-${newLang}`)) {
-                    el.style.display = 'block';
-                } else {
-                    el.style.display = 'none';
-                }
-            });
-        }
-
-        // Hide Arabic text initially
-        document.querySelectorAll('.lang-ar').forEach(el => {
-            el.style.display = 'none';
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
