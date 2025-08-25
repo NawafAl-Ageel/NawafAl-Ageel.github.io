@@ -47,12 +47,19 @@ function toggleLanguage() {
     html.setAttribute('lang', newLang);
     html.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
 
-    // Toggle visibility of language-specific elements
-    document.querySelectorAll('[class*="lang-"]').forEach(el => {
-        if (el.classList.contains(`lang-${newLang}`)) {
-            el.style.display = 'block';
+    // Hide all language elements first
+    document.querySelectorAll('.lang-en, .lang-ar').forEach(el => {
+        el.style.display = 'none';
+    });
+
+    // Show elements for the new language
+    document.querySelectorAll(`.lang-${newLang}`).forEach(el => {
+        // Check if parent is inline or block element to set appropriate display
+        const parentDisplay = window.getComputedStyle(el.parentElement).display;
+        if (parentDisplay === 'flex' || el.parentElement.tagName === 'A') {
+            el.style.display = 'inline';
         } else {
-            el.style.display = 'none';
+            el.style.display = 'block';
         }
     });
 }

@@ -286,6 +286,18 @@ h1 {
     transition: transform 0.3s;
 }
 
+.lang-switch .ar {
+    display: none;
+}
+
+[dir="rtl"] .lang-switch .en {
+    display: none;
+}
+
+[dir="rtl"] .lang-switch .ar {
+    display: inline;
+}
+
 [dir="rtl"] .lang-switch {
     left: 20px;
     right: auto;
